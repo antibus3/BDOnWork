@@ -1,0 +1,8 @@
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\UnitTestBDOnWorkLib.dll.config
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\UnitTestBDOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\UnitTestBDOnWorkLib.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestBDOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestBDOnWorkLib.pdb

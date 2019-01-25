@@ -1,0 +1,8 @@
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\obj\Debug\UnitTestProject2.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
