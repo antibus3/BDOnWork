@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOnWorkLib", "BOnWorkLib\B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestBDOnWorkLib", "UnitTestBDOnWorkLib\UnitTestBDOnWorkLib.csproj", "{2B1C8413-4344-46C8-A76B-58DCEC122E3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{B6161873-5198-4E07-9DE2-88070A7647DE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{2B1C8413-4344-46C8-A76B-58DCEC122E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1C8413-4344-46C8-A76B-58DCEC122E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1C8413-4344-46C8-A76B-58DCEC122E3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6161873-5198-4E07-9DE2-88070A7647DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6161873-5198-4E07-9DE2-88070A7647DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6161873-5198-4E07-9DE2-88070A7647DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6161873-5198-4E07-9DE2-88070A7647DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

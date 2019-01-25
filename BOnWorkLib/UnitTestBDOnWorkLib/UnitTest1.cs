@@ -8,11 +8,20 @@ namespace UnitTestBDOnWorkLib
     public class UnitTestBDOnWorkLib
     {
         [TestMethod]
-        public void SettingConnectToBDTest()
+        public void ConnectToBDTest()
         {
             bool expected = true;
             InteractionWithBase BD = new InteractionWithBase();
             bool actual = BD.SettingConnectToBD();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void OpenBDTest()
+        {
+            bool expected = true;
+            InteractionWithBase BD = new InteractionWithBase();
+            BD.SettingConnectToBD();
+            bool actual = BD.OpenBD();
             Assert.AreEqual(expected, actual);
         }
     }
