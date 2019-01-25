@@ -1,0 +1,11 @@
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\WindowsFormsApplication1\bin\Debug\BOnWorkLib.pdb

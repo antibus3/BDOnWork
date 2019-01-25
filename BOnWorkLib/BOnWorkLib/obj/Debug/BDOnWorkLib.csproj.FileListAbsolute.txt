@@ -1,0 +1,5 @@
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BDOnWorkLib.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BOnWorkLib.pdb
