@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOnWorkLib", "BOnWorkLib\BDOnWorkLib.csproj", "{CF94DD2C-A4D9-4483-96A5-08E298460D35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestBDOnWorkLib", "UnitTestBDOnWorkLib\UnitTestBDOnWorkLib.csproj", "{2B1C8413-4344-46C8-A76B-58DCEC122E3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestInteractionWithBase", "UnitTestBDOnWorkLib\UnitTestInteractionWithBase.csproj", "{2B1C8413-4344-46C8-A76B-58DCEC122E3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

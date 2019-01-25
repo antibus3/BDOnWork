@@ -53,10 +53,31 @@ namespace BDOnWorkLib
             }
             catch
             {
+                if (IsOpened) return true; //  если исключение появилось при уже открытой базе, то всёравно считать, что база открыта (повторное открытие) хотя это не точно!!
                 MessageBox.Show("Не удалось открыть БД", "Ошибка подключения", MessageBoxButtons.OK);
                 IsOpened = false;
                 return false;
             }
         }
+
+        public bool CloseBD ()
+        {
+            try
+            {
+                oConn.Close();
+                IsOpened = false;
+                return true;
+            }
+            catch
+            {
+               // повторное закрытие вообще не вызывает исключение, хз почему.
+                MessageBox.Show("Не удалось закрыть БД", "Ошибка подключения", MessageBoxButtons.OK);
+                IsOpened = true;
+                return false;
+            }
+        }
+
+        public void abc ()
+        { int a = 1; }
     }
 }
