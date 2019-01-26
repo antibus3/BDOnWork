@@ -1,0 +1,10 @@
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BDOnWorkLib.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BOnWorkLib\BOnWorkLib\obj\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\BDOnWorkLib\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\BDOnWorkLib\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\BDOnWorkLib\obj\Debug\BDOnWorkLib.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\BDOnWorkLib\obj\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\BDOnWorkLib\obj\Debug\BOnWorkLib.pdb

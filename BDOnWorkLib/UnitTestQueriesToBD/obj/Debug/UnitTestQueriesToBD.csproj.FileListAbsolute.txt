@@ -1,0 +1,14 @@
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\bin\Debug\UnitTestQueriesToBD.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\bin\Debug\UnitTestQueriesToBD.pdb
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.dll
+E:\GitHub\BDOnWork\BOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\bin\Debug\UnitTestQueriesToBD.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\bin\Debug\UnitTestQueriesToBD.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestQueriesToBD\obj\Debug\UnitTestQueriesToBD.pdb
