@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BDOnWorkLib
 {
-    class QueriesToBD
+    static public class QueriesToBD
     {
     }
 }
