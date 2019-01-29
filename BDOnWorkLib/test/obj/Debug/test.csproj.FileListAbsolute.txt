@@ -1,0 +1,8 @@
+E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.exe
+E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.Form1.resources
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.Properties.Resources.resources
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csproj.GenerateResource.Cache
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.exe
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.pdb
