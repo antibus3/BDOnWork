@@ -15,6 +15,11 @@ namespace BDOnWorkLib
         static public List<SensitiveElement> SelectFromBD (InteractionWithBase oConn, SensitiveElement SelectElement)
         {
             oConn.OpenBD();
+
+            DataSet ds = new DataSet();
+            DataTable schemaTable = oConn.oConn.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables,
+             new object[] { null, null, null, "TABLE" });
+
             OleDbCommand oCmd = new OleDbCommand();
             OleDbDataAdapter oAdapt = new OleDbDataAdapter();
             DataTable tDT = new DataTable();
@@ -23,7 +28,7 @@ namespace BDOnWorkLib
             oAdapt.SelectCommand = oCmd;
             oAdapt.Fill(tDT);  //  После этого, у нас есть таблица с найдеными блоками
             oConn.CloseBD();
-            
+            return ParseTable(tDT);
 
         }
 
@@ -31,9 +36,9 @@ namespace BDOnWorkLib
         {
             try
             {
-                string result = "select * from[БД$] where ";  //  Это должно быть обязательно
+                string result = "select * from[БД$] where";  //  Это должно быть обязательно
                 //  Далее все поля, которые не равны нулю по умолчанию (т.е. которые надо найти)
-
+                if (Element.Id != 0) result += String.Format("ID = \"{0}\" and ", Element.Id);
                 if (Element.NumberVK != null) result += String.Format("Номер_блока = \"{0}\" and ", Element.NumberVK);
                 if (Element.NumberSIOM != null) result += String.Format("Номер_СИОМ = \"{0}\" and ", Element.NumberSIOM);
                 if (Element.SignalLeftSIOM != 0) result += String.Format("Uвых.лев. = \"{0}\" and ", Element.SignalLeftSIOM);
@@ -87,17 +92,17 @@ namespace BDOnWorkLib
                 int id = Int32.Parse((string)r.ItemArray[0]);
                 string numberVK = (r.ItemArray[1] != DBNull.Value) ? (string)r.ItemArray[1] : null;
                 string numberSIOM = (r.ItemArray[2] != DBNull.Value) ? (string)r.ItemArray[2] : null;
-                float signalLeftSIOM = (r.ItemArray[3] != DBNull.Value) ? (float)r.ItemArray[2] : 0f;
-                float signalRigthSIOM = (r.ItemArray[4] != DBNull.Value) ? (float)r.ItemArray[4] : 0f;
-                float sPILeftSIOM = (r.ItemArray[5] != DBNull.Value) ? (float)r.ItemArray[5] : 0f;
-                float sPIRigthSIOM = (r.ItemArray[6] != DBNull.Value) ? (float)r.ItemArray[6] : 0f;
-                float lengthLeftSIOM = (r.ItemArray[7] != DBNull.Value) ? (float)r.ItemArray[7] : 0f;
-                float lengthRigthSIOM = (r.ItemArray[8] != DBNull.Value) ? (float)r.ItemArray[8] : 0f;
-                float signalVK = (r.ItemArray[9] != DBNull.Value) ? (float)r.ItemArray[9] : 0f;
-                float sPIVK = (r.ItemArray[10] != DBNull.Value) ? (float)r.ItemArray[10] : 0f;
-                float constantSignal = (r.ItemArray[11] != DBNull.Value) ? (float)r.ItemArray[11] : 0f;
-                float lengthLeftVK = (r.ItemArray[12] != DBNull.Value) ? (float)r.ItemArray[12] : 0f;
-                float lengthRigthVK = (r.ItemArray[13] != DBNull.Value) ? (float)r.ItemArray[13] : 0f;
+                double signalLeftSIOM = (r.ItemArray[3] != DBNull.Value) ? Double.Parse((string)r.ItemArray[3]) : 0;
+                double signalRigthSIOM = (r.ItemArray[4] != DBNull.Value) ? Double.Parse((string)r.ItemArray[4]) : 0;
+                double sPILeftSIOM = (r.ItemArray[5] != DBNull.Value) ? Double.Parse((string)r.ItemArray[5]) : 0;
+                double sPIRigthSIOM = (r.ItemArray[6] != DBNull.Value) ? Double.Parse((string)r.ItemArray[6]) : 0;
+                double lengthLeftSIOM = (r.ItemArray[7] != DBNull.Value) ? Double.Parse((string)r.ItemArray[7]) : 0;
+                double lengthRigthSIOM = (r.ItemArray[8] != DBNull.Value) ? Double.Parse((string)r.ItemArray[8]) : 0;
+                double signalVK = (r.ItemArray[9] != DBNull.Value) ? Double.Parse((string)r.ItemArray[9]) : 0;
+                double sPIVK = (r.ItemArray[10] != DBNull.Value) ? Double.Parse((string)r.ItemArray[10]) : 0;
+                double constantSignal = (r.ItemArray[11] != DBNull.Value) ? Double.Parse((string)r.ItemArray[11]) : 0;
+                double lengthLeftVK = (r.ItemArray[12] != DBNull.Value) ? Double.Parse((string)r.ItemArray[12]) : 0;
+                double lengthRigthVK = (r.ItemArray[13] != DBNull.Value) ? Double.Parse((string)r.ItemArray[13]) : 0;
                 string numberTemperatureSensor = (r.ItemArray[14] != DBNull.Value) ? (string)r.ItemArray[14] : null;
                 bool isExperement = ((string)r.ItemArray[15] == "true") ? true : false;
                 //  Ну и возвратить результат

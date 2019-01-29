@@ -6,3 +6,6 @@ E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.Properties.Resources.resource
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csproj.GenerateResource.Cache
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.exe
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.exe.config
+E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\BOnWorkLib.dll
+E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\BOnWorkLib.pdb
