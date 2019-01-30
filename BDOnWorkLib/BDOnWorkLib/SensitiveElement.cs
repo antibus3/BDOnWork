@@ -8,44 +8,44 @@ namespace BDOnWorkLib
     public class SensitiveElement
     {
         //  Основные характеристики Элемента Чуствительного
-        public readonly int Id;
+        public readonly int? Id;
         public readonly string NumberVK;
         public readonly string NumberSIOM;
-        public readonly double SignalLeftSIOM;
-        public readonly double SignalRigthSIOM;
-        public readonly double SPILeftSIOM;
-        public readonly double SPIRigthSIOM;
-        public readonly double LengthLeftSIOM;
-        public readonly double LengthRigthSIOM;
-        public readonly double SignalVK;
-        public readonly double SPIVK;
-        public readonly double LengthLeftVK;
-        public readonly double LengthRigthVK;
-        public readonly double ConstantSignal;
+        public readonly double? SignalLeftSIOM;
+        public readonly double? SignalRigthSIOM;
+        public readonly double? SPILeftSIOM;
+        public readonly double? SPIRigthSIOM;
+        public readonly double? LengthLeftSIOM;
+        public readonly double? LengthRigthSIOM;
+        public readonly double? SignalVK;
+        public readonly double? SPIVK;
+        public readonly double? LengthLeftVK;
+        public readonly double? LengthRigthVK;
+        public readonly double? ConstantSignal;
 
         //  Побочные характеристики
         public readonly string NumberTemperatureSensor;
-        public readonly bool IsExperement;
+        public readonly bool? IsExperement;
 
         public SensitiveElement() { }
 
         public SensitiveElement(
-            int id = 0,
+            int? id = null,
             string numberVK = null,
             string numberSIOM = null,
-            double signalLeftSIOM = 0.0,
-            double signalRigthSIOM = 0.0,
-            double sPILeftSIOM = 0.0,
-            double sPIRigthSIOM = 0.0,
-            double lengthLeftSIOM = 0.0,
-            double lengthRigthSIOM = 0.0,
-            double signalVK = 0.0,
-            double sPIVK = 0.0,
-            double lengthLeftVK = 0.0,
-            double lengthRigthVK = 0.0,
-            double constantSignal = 0.0,
+            double? signalLeftSIOM = null,
+            double? signalRigthSIOM = null,
+            double? sPILeftSIOM = null,
+            double? sPIRigthSIOM = null,
+            double? lengthLeftSIOM = null,
+            double? lengthRigthSIOM = null,
+            double? signalVK = null,
+            double? sPIVK = null,
+            double? lengthLeftVK = null,
+            double? lengthRigthVK = null,
+            double? constantSignal = null,
             string numberTemperatureSensor = null,
-            bool isExperement = false
+            bool? isExperement = null
                                 )
         {
             Id = id;
