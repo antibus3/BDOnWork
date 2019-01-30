@@ -13,7 +13,8 @@ namespace BDOnWorkLib
     public class InteractionWithBase
     {
 
-        OleDbConnection oConn = new OleDbConnection();      //  объект БД
+        public OleDbConnection oConn {get; private set; }     //  объект БД
+        
         private bool IsOpened = false;
 
         public InteractionWithBase() { }
@@ -21,7 +22,8 @@ namespace BDOnWorkLib
         public bool SettingConnectToBD() //  Метод, который настраивает связь с БД и проверяет, есть ли соединение
         {
             try
-            { 
+            {
+                oConn = new OleDbConnection();
                 //  Проверка, есть ли вообще файл БД
                 FileInfo BD = new FileInfo(ConfigurationManager.AppSettings["DirBD"]);
                 if (!BD.Exists) return false;
@@ -33,6 +35,7 @@ namespace BDOnWorkLib
                 //  На всякий открыть и закрыть БД, проверить, всё ли открывается и закрывается
                 oConn.Open();
                 oConn.Close();
+                
 
             }
             catch
