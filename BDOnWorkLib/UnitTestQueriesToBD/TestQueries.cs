@@ -19,10 +19,10 @@ namespace UnitTestQueriesToBD
             var find = QueriesToBD.SelectFromBD(bd, FindElement);
             bd.CloseBD();
             bool condition = find is List<SensitiveElement>;
-           // Assert.IsTrue(condition);
+            Assert.IsTrue(condition);
 
             //  Тест на возвращение 1 строки БД
-            //FindElement = new SensitiveElement(id: 1);
+            FindElement = new SensitiveElement(id: 1);
             bd.OpenBD();
             List<SensitiveElement> expected = QueriesToBD.SelectFromBD(bd, FindElement);
             bd.CloseBD();
@@ -45,7 +45,7 @@ namespace UnitTestQueriesToBD
                 numberTemperatureSensor: "125",
                 isExperement: false
                 );
-          //  Assert.AreEqual(expected[0], actual);
+            Assert.AreEqual(expected[0], actual);
 
         }
 

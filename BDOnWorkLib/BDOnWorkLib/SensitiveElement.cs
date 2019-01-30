@@ -65,52 +65,32 @@ namespace BDOnWorkLib
             NumberTemperatureSensor = numberTemperatureSensor;
             IsExperement = isExperement;
         }
-        
-        public static bool operator ==(SensitiveElement s1, SensitiveElement s2)
+
+        public override bool Equals(object obj)
         {
+            if (!(obj is SensitiveElement)) return false; //  Если обект не является блоком, тогда он не может быть эквивалентным 
+            SensitiveElement itemToCompare = obj as SensitiveElement;
             if (
-                s1.Id == s2.Id &&
-                s1.NumberVK == s2.NumberVK &&
-                s1.NumberSIOM == s2.NumberSIOM &&
-                s1.SignalLeftSIOM == s2.SignalLeftSIOM &&
-                s1.SignalRigthSIOM == s2.SignalRigthSIOM &&
-                s1.SPILeftSIOM == s2.SPILeftSIOM &&
-                s1.SPIRigthSIOM == s2.SPIRigthSIOM &&
-                s1.LengthLeftSIOM == s2.LengthLeftSIOM &&
-                s1.LengthRigthSIOM == s2.LengthRigthSIOM &&
-                s1.SignalVK == s2.SignalVK &&
-                s1.SPIVK == s2.SPIVK &&
-                s1.LengthLeftVK == s2.LengthLeftVK &&
-                s1.LengthRigthVK == s2.LengthRigthVK &&
-                s1.ConstantSignal == s2.ConstantSignal &&
-                s1.NumberTemperatureSensor == s2.NumberTemperatureSensor &&
-                s1.IsExperement == s2.IsExperement
+                this.Id == itemToCompare.Id &&
+                this.NumberVK == itemToCompare.NumberVK &&
+                this.NumberSIOM == itemToCompare.NumberSIOM &&
+                this.SignalLeftSIOM == itemToCompare.SignalLeftSIOM &&
+                this.SignalRigthSIOM == itemToCompare.SignalRigthSIOM &&
+                this.SPILeftSIOM == itemToCompare.SPILeftSIOM &&
+                this.SPIRigthSIOM == itemToCompare.SPIRigthSIOM &&
+                this.LengthLeftSIOM == itemToCompare.LengthLeftSIOM &&
+                this.LengthRigthSIOM == itemToCompare.LengthRigthSIOM &&
+                this.SignalVK == itemToCompare.SignalVK &&
+                this.SPIVK == itemToCompare.SPIVK &&
+                this.LengthLeftVK == itemToCompare.LengthLeftVK &&
+                this.LengthRigthVK == itemToCompare.LengthRigthVK &&
+                this.ConstantSignal == itemToCompare.ConstantSignal &&
+                this.NumberTemperatureSensor == itemToCompare.NumberTemperatureSensor &&
+                this.IsExperement == itemToCompare.IsExperement
               ) return true;
-                      else return false; 
+                        else return false;
         }
-        public static bool operator !=(SensitiveElement s1, SensitiveElement s2)
-        {
-            if (
-                s1.Id != s2.Id ||
-                s1.NumberVK != s2.NumberVK ||
-                s1.NumberSIOM != s2.NumberSIOM ||
-                s1.SignalLeftSIOM != s2.SignalLeftSIOM ||
-                s1.SignalRigthSIOM != s2.SignalRigthSIOM ||
-                s1.SPILeftSIOM != s2.SPILeftSIOM ||
-                s1.SPIRigthSIOM != s2.SPIRigthSIOM ||
-                s1.LengthLeftSIOM != s2.LengthLeftSIOM ||
-                s1.LengthRigthSIOM != s2.LengthRigthSIOM ||
-                s1.SignalVK != s2.SignalVK ||
-                s1.SPIVK != s2.SPIVK ||
-                s1.LengthLeftVK != s2.LengthLeftVK ||
-                s1.LengthRigthVK != s2.LengthRigthVK ||
-                s1.ConstantSignal != s2.ConstantSignal ||
-                s1.NumberTemperatureSensor != s2.NumberTemperatureSensor ||
-                s1.IsExperement != s2.IsExperement
-              ) return false;
-                        else return true;
-        }
-        
+
 
 
 

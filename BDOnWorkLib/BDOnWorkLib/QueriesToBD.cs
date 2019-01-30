@@ -38,23 +38,29 @@ namespace BDOnWorkLib
             {
                 string result = "select * from[БД$] where";  //  Это должно быть обязательно
                 //  Далее все поля, которые не равны нулю по умолчанию (т.е. которые надо найти)
-                if (Element.Id != 0) result += String.Format("ID = \"{0}\" and ", Element.Id);
-                if (Element.NumberVK != null) result += String.Format("Номер_блока = \"{0}\" and ", Element.NumberVK);
-                if (Element.NumberSIOM != null) result += String.Format("Номер_СИОМ = \"{0}\" and ", Element.NumberSIOM);
-                if (Element.SignalLeftSIOM != 0) result += String.Format("Uвых.лев. = \"{0}\" and ", Element.SignalLeftSIOM);
-                if (Element.SignalRigthSIOM != 0) result += String.Format("Uвых.прав. = \"{0}\" and ", Element.SignalRigthSIOM);
-                if (Element.SPILeftSIOM != 0) result += String.Format("СПИлев. = \"{0}\" and ", Element.SPILeftSIOM);
-                if (Element.SPIRigthSIOM != 0) result += String.Format("СПИправ. = \"{0}\" and ", Element.SPIRigthSIOM);
-                if (Element.LengthLeftSIOM != 0) result += String.Format("LСИОМлев. = \"{0}\" and ", Element.LengthLeftSIOM);
-                if (Element.LengthRigthSIOM != 0) result += String.Format("LСИОМправ. = \"{0}\" and ", Element.LengthRigthSIOM);
-                if (Element.SignalVK != 0) result += String.Format("Uвк. = \"{0}\" and ", Element.SignalVK);
-                if (Element.SPIVK != 0) result += String.Format("СПИвк. = \"{0}\" and ", Element.SPIVK);
-                if (Element.ConstantSignal != 0) result += String.Format("Uпост. = \"{0}\" and ", Element.ConstantSignal);
-                if (Element.LengthLeftVK != 0) result += String.Format("LВКлев. = \"{0}\" and ", Element.LengthLeftVK);
-                if (Element.LengthRigthVK != 0) result += String.Format("LВКправ. = \"{0}\" and ", Element.LengthRigthVK);
-                if (Element.NumberTemperatureSensor != null) result += String.Format("ТД = \"{0}\" and ", Element.NumberTemperatureSensor);
-                if (Element.IsExperement != false) result += String.Format("ТД = \"{0}\" and ", Element.IsExperement);
+                if (Element.Id != 0) result += String.Format(" ID = \"{0}\" and", Element.Id);
+                if (Element.NumberVK != null) result += String.Format(" Номер_блока = \"{0}\" and", Element.NumberVK);
+                if (Element.NumberSIOM != null) result += String.Format(" Номер_СИОМ = \"{0}\" and", Element.NumberSIOM);
+                if (Element.SignalLeftSIOM != 0) result += String.Format(" Uвых.лев. = \"{0}\" and", Element.SignalLeftSIOM);
+                if (Element.SignalRigthSIOM != 0) result += String.Format(" Uвых.прав. = \"{0}\" and", Element.SignalRigthSIOM);
+                if (Element.SPILeftSIOM != 0) result += String.Format(" СПИлев. = \"{0}\" and", Element.SPILeftSIOM);
+                if (Element.SPIRigthSIOM != 0) result += String.Format(" СПИправ. = \"{0}\" and", Element.SPIRigthSIOM);
+                if (Element.LengthLeftSIOM != 0) result += String.Format(" LСИОМлев. = \"{0}\" and", Element.LengthLeftSIOM);
+                if (Element.LengthRigthSIOM != 0) result += String.Format(" LСИОМправ. = \"{0}\" and", Element.LengthRigthSIOM);
+                if (Element.SignalVK != 0) result += String.Format(" Uвк. = \"{0}\" and", Element.SignalVK);
+                if (Element.SPIVK != 0) result += String.Format(" СПИвк. = \"{0}\" and", Element.SPIVK);
+                if (Element.ConstantSignal != 0) result += String.Format(" Uпост. = \"{0}\" and", Element.ConstantSignal);
+                if (Element.LengthLeftVK != 0) result += String.Format(" LВКлев. = \"{0}\" and", Element.LengthLeftVK);
+                if (Element.LengthRigthVK != 0) result += String.Format(" LВКправ. = \"{0}\" and", Element.LengthRigthVK);
+                if (Element.NumberTemperatureSensor != null) result += String.Format(" ТД = \"{0}\" and", Element.NumberTemperatureSensor);
+                if (Element.IsExperement != false) result += String.Format(" ТД = \"{0}\" and", Element.IsExperement);
                 //  Надеюсь, последний and не закосячит запрос 
+                //  Закосячит(
+                //  Нужно удалить последнее слово. Если and или where, если не выбрано не одно поле
+                for (int i=result.Length;i>0;i--)
+                {
+                    if (result[i-1] != ' ') result = result.Remove(i - 1); else break;
+                }
                 return result;
             } catch 
             {
