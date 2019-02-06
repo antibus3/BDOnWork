@@ -10,11 +10,20 @@ namespace BDOnWorkLib
 
         public readonly Dictionary<String, object> Filds;
 
-        public SensitiveElement() { }
+        public SensitiveElement()
+        {
+            Filds = new Dictionary<string, object>();
+        }
 
         public SensitiveElement(Dictionary<String, object> filds)
         {
             Filds = filds;
+        }
+
+        public List<string> GetListHead ()  //  Метод для возвращения спистка столбцов
+        {
+
+            return this.Filds.Keys.ToList();
         }
 
         public override bool Equals(object obj)

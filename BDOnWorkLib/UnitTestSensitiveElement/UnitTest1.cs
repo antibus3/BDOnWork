@@ -33,7 +33,6 @@ namespace UnitTestSensitiveElement
             Element2 = new SensitiveElement(Row3);
             result = Element1.Equals(Element2);
             Assert.IsFalse(result);
-
         }
     }
 }

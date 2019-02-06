@@ -19,26 +19,31 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dictionary<string, object> Row1 = new Dictionary<string, object> {
-                {"ID", 2},
-                {"Номер_блока", 5873},
-                {"Номер_СИОМ", "СТ-1-2-3-4"}
+
+            InteractionWithBase oCon = new InteractionWithBase();
+            oCon.SettingConnectToBD();
+
+            Dictionary<string, object> actualRow = new Dictionary<string, object>
+            {
+                { "ID", 10},
+                {"Номер_блока",  "555"},
+                {"Номер_СИОМ", "СТ-1-2-3-4"},
+                { "Uвыx_лев",  157},
+                { "Uвых_прав", 346},
+                { "СПИлев", 32},
+                { "СПИправ", 33},
+                { "LСИОМлев", 70},
+                { "LСИОМправ", 70},
+                { "Uвк", 500},
+                { "СПИвк", 25},
+                { "Uпост", 201},
+                { "LВКлев", 100},
+                { "LВКправ", 130},
+                { "ТД", "125"},
+                { "IsExperemental", "false" }
             };
-            Dictionary<string, object> Row2 = new Dictionary<string, object> {
-                {"ID", 2},
-                {"Номер_блока", 5873},
-                {"Номер_СИОМ", "СТ-1-2-3-4"}
-            };
-            Dictionary<string, object> Row3 = new Dictionary<string, object> {
-                {"ID", 2},
-                {"Номер_блока", 5873},
-                {"Номер_СИОМ", "СТ-4-3-2-1"}
-            };
-            SensitiveElement Element1 = new SensitiveElement(Row1);
-            SensitiveElement Element2 = new SensitiveElement(Row2);
-            bool result = Element1.Equals(Element2);
-            Element2 = new SensitiveElement(Row3);
-            result = Element1.Equals(Element2);
+            SensitiveElement actual = new SensitiveElement(actualRow);
+            bool b = QueriesToBD.UpdateFromBD(oCon, actual);
 
         }
             
