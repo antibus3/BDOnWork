@@ -8,6 +8,7 @@ namespace UnitTestQueriesToBD
     [TestClass]
     public class UnitTestQueriesToBD
     {
+        /*
         [TestMethod]
         public void SelectFromBDTest()
         {
@@ -81,7 +82,7 @@ namespace UnitTestQueriesToBD
             List<SensitiveElement> expected = QueriesToBD.SelectFromBD(bd, TestElement);
             Assert.AreEqual(expected[0], TestElement); //  Сравнивает, то ли он вставил
             Assert.AreEqual(expected.Count, 1); //  вставил ли он 1 строку
-            */
+            
             Assert.IsTrue(false);
 
         }

@@ -10,7 +10,7 @@ namespace BDOnWorkLib
 {
     static public class QueriesToBD
     {
-        
+     /*   
 
         //  Этом метод ищет в БД блоки со всеми полями, которые не равны 0 в передоваемом блоке
         static public List<SensitiveElement> SelectFromBD (InteractionWithBase oConn, SensitiveElement SelectElement)
@@ -233,7 +233,7 @@ namespace BDOnWorkLib
             }
         }
     
-
+    */
 
     }
 }

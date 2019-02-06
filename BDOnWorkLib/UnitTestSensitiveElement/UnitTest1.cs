@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BDOnWorkLib;
+using System.Collections.Generic;
 
-namespace test
+namespace UnitTestSensitiveElement
 {
-    public partial class Form1 : Form
+    [TestClass]
+    public class UnitTest1
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        [TestMethod]
+        public void EqualsTest()
         {
             Dictionary<string, object> Row1 = new Dictionary<string, object> {
                 {"ID", 2},
@@ -37,10 +29,11 @@ namespace test
             SensitiveElement Element1 = new SensitiveElement(Row1);
             SensitiveElement Element2 = new SensitiveElement(Row2);
             bool result = Element1.Equals(Element2);
+            Assert.IsTrue(result);
             Element2 = new SensitiveElement(Row3);
             result = Element1.Equals(Element2);
+            Assert.IsFalse(result);
 
         }
-            
     }
 }
