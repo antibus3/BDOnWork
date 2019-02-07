@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BDOnWorkLib;
+using System.Configuration;
 
 namespace UnitTestInteractionWithBase
 {
@@ -11,7 +12,7 @@ namespace UnitTestInteractionWithBase
         public void ConnectToBDTest()
         {
             bool expected = true;
-            InteractionWithBase BD = new InteractionWithBase();
+            InteractionWithBase BD = new InteractionWithBase(ConfigurationManager.AppSettings["DirBD"]);
             bool actual = BD.SettingConnectToBD();
             Assert.AreEqual(expected, actual);
         }
@@ -20,7 +21,7 @@ namespace UnitTestInteractionWithBase
         public void OpenBDTest()
         {
             bool expected = true;
-            InteractionWithBase BD = new InteractionWithBase();
+            InteractionWithBase BD = new InteractionWithBase(ConfigurationManager.AppSettings["DirBD"]);
             BD.SettingConnectToBD();
             bool actual = BD.OpenBD();
             Assert.AreEqual(expected, actual);
@@ -30,7 +31,7 @@ namespace UnitTestInteractionWithBase
         public void CloseBDTest()
         {
             bool expected = true;
-            InteractionWithBase BD = new InteractionWithBase();
+            InteractionWithBase BD = new InteractionWithBase(ConfigurationManager.AppSettings["DirBD"]);
             BD.SettingConnectToBD();
             BD.OpenBD();
             bool actual = BD.CloseBD();

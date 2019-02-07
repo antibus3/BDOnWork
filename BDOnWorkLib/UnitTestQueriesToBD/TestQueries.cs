@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BDOnWorkLib;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace UnitTestQueriesToBD
 {
@@ -15,7 +16,7 @@ namespace UnitTestQueriesToBD
 
             //  Тест на возвращение вообще чегонибудь
             SensitiveElement FindElement = new SensitiveElement();
-            InteractionWithBase bd = new InteractionWithBase();
+            InteractionWithBase bd = new InteractionWithBase(ConfigurationManager.AppSettings["DirBD"]);
             bd.SettingConnectToBD();
             var find = QueriesToBD.SelectFromBD(bd, FindElement);
             bool condition = find is List<SensitiveElement>;
@@ -55,7 +56,7 @@ namespace UnitTestQueriesToBD
         public void InsertFromBDTest ()
         {
             
-            InteractionWithBase bd = new InteractionWithBase();
+            InteractionWithBase bd = new InteractionWithBase(ConfigurationManager.AppSettings["DirBD"]);
             bd.SettingConnectToBD();
             Dictionary<string, object> actualRow = new Dictionary<string, object>
             {

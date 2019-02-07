@@ -20,9 +20,8 @@ namespace test
         private void button1_Click(object sender, EventArgs e)
         {
 
-            InteractionWithBase oCon = new InteractionWithBase();
+            InteractionWithBase oCon = new InteractionWithBase("E:/BD.xls");
             oCon.SettingConnectToBD();
-
             Dictionary<string, object> actualRow = new Dictionary<string, object>
             {
                 { "ID", 10},
@@ -42,9 +41,9 @@ namespace test
                 { "ТД", "125"},
                 { "IsExperemental", "false" }
             };
-            SensitiveElement actual = new SensitiveElement(actualRow);
-            bool b = QueriesToBD.UpdateFromBD(oCon, actual);
-
+            SensitiveElement TestElement = new SensitiveElement(actualRow);
+            QueriesToBD.UpdateFromBD(oCon, TestElement);
+            
         }
             
     }

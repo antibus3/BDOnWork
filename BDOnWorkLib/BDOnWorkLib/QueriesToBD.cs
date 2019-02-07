@@ -124,8 +124,11 @@ namespace BDOnWorkLib
             try
             {
                 //  Проверка на дубляж
-                if (SelectFromBD(oConn, SelectElement).Count != 0) throw new ErrorInsertExceptions("Ошибка! Такой элемент уже содержится в БД.");
-                if (SelectElement.Filds["ID"] == null) throw new ErrorInsertExceptions("Ошибка! Элемент должен содержать ID.");
+                SensitiveElement findElement = new SensitiveElement(new Dictionary<string, object> { { "ID", SelectElement.Filds["ID"] } });
+                if (SelectFromBD(oConn, findElement ).Count != 0)
+                    throw new ErrorInsertExceptions("Ошибка! Такой элемент уже содержится в БД.");
+                if (SelectElement.Filds["ID"] == null)
+                    throw new ErrorInsertExceptions("Ошибка! Элемент должен содержать ID.");
                 //  Составление части запроса на вставку со столбцами
                 string heads = "(";
                 string values = " values (";
