@@ -13,12 +13,12 @@ namespace BDOnWorkLib
      
 
         //  Этом метод ищет в БД блоки со всеми полями, которые не равны 0 в передоваемом блоке
-        static public List<SensitiveElement> SelectFromBD (InteractionWithBase oConn, SensitiveElement SelectElement)
+        static public List<SensitiveElement> SelectFromBD (InteractionWithBase oConn, string listName, SensitiveElement SelectElement)
         {
             try
             {
                 DataTable tDT = new DataTable();
-                string request = "select * from[БД$]";  //  Сам запрос
+                string request = String.Format("select * from[{0}$]", listName);  //  Сам запрос
                 request += FormFildRequest(SelectElement);
                 oConn.OpenBD();
                 GetAdapter(oConn, request).Fill(tDT);
@@ -119,13 +119,13 @@ namespace BDOnWorkLib
         }
         
         //  Метод вставки в БД
-        static public bool InsertFromBD (InteractionWithBase oConn, SensitiveElement SelectElement)
+        static public bool InsertFromBD (InteractionWithBase oConn, string listName, SensitiveElement SelectElement)
         {
             try
             {
                 //  Проверка на дубляж
                 SensitiveElement findElement = new SensitiveElement(new Dictionary<string, object> { { "ID", SelectElement.Filds["ID"] } });
-                if (SelectFromBD(oConn, findElement ).Count != 0)
+                if (SelectFromBD(oConn, listName, findElement ).Count != 0)
                     throw new ErrorInsertExceptions("Ошибка! Такой элемент уже содержится в БД.");
                 if (SelectElement.Filds["ID"] == null)
                     throw new ErrorInsertExceptions("Ошибка! Элемент должен содержать ID.");
@@ -159,7 +159,7 @@ namespace BDOnWorkLib
 
        
         
-        static public bool UpdateFromBD (InteractionWithBase oConn, SensitiveElement SelectElement)
+        static public bool UpdateFromBD (InteractionWithBase oConn, string listName, SensitiveElement SelectElement)
         {
             try
             {
@@ -168,8 +168,8 @@ namespace BDOnWorkLib
                     { "ID", SelectElement.Filds["ID"]}
                 };
                 SensitiveElement UpdateElement = new SensitiveElement(UpdateID);
-                if (SelectFromBD(oConn, UpdateElement).Count == 0) throw new ErrorDeleteException("Ошибка! Такой элемент не содержится в БД.");
-                if (SelectFromBD(oConn, UpdateElement).Count > 1) throw new Exception("В БД содержатся несколько элементов с одним ID"); 
+                if (SelectFromBD(oConn, listName, UpdateElement).Count == 0) throw new ErrorDeleteException("Ошибка! Такой элемент не содержится в БД.");
+                if (SelectFromBD(oConn, listName,  UpdateElement).Count > 1) throw new Exception("В БД содержатся несколько элементов с одним ID"); 
                 //  Формирование запроса на обновление
                 string request = "update [БД$]";
                 string set = " set";

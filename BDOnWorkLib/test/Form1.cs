@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BDOnWorkLib;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading.Tasks;
+using System.Threading;
+using System.IO;
 
 namespace test
 {
@@ -20,31 +24,26 @@ namespace test
         private void button1_Click(object sender, EventArgs e)
         {
 
-            InteractionWithBase oCon = new InteractionWithBase("E:/BD.xls");
-            oCon.SettingConnectToBD();
-            Dictionary<string, object> actualRow = new Dictionary<string, object>
-            {
-                { "ID", 10},
-                {"Номер_блока",  "555"},
-                {"Номер_СИОМ", "СТ-1-2-3-4"},
-                { "Uвыx_лев",  157},
-                { "Uвых_прав", 346},
-                { "СПИлев", 32},
-                { "СПИправ", 33},
-                { "LСИОМлев", 70},
-                { "LСИОМправ", 70},
-                { "Uвк", 500},
-                { "СПИвк", 25},
-                { "Uпост", 201},
-                { "LВКлев", 100},
-                { "LВКправ", 130},
-                { "ТД", "125"},
-                { "IsExperemental", "false" }
-            };
-            SensitiveElement TestElement = new SensitiveElement(actualRow);
-            QueriesToBD.UpdateFromBD(oCon, TestElement);
+            ParseChart c = new ParseChart("E:/CQT-3-06-1-33 110717.xlsx");
+            c.Parent = panel1;
+            GC.Collect();
+
+
+
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+    
             
         }
-            
+        private  void abc ()
+        {
+          
+
+        }
+        
     }
 }
