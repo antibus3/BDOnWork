@@ -23,32 +23,9 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            ParseChart c = new ParseChart("E:/CQT-3-06-1-33 110717.xlsx");
-            c.Parent = panel1;
-            GC.Collect();
-
-
-
+            ParseParfjonov p = new ParseParfjonov("E:/Protocol_N14520_ОБ-120_N5043.jpeg");
         }
 
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                abc();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Рукожёп детектед", MessageBoxButtons.OK);
-            }
-
-        }
-        private  void abc ()
-        {
-                Double.Parse("qwe");
-        }
         
     }
 }

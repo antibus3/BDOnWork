@@ -44,7 +44,6 @@ namespace BDOnWorkLib
                 CreateMessage();
                 VisibleChart();
 
-
             }
             catch
             {
