@@ -36,13 +36,18 @@ namespace test
 
         private void button2_Click(object sender, EventArgs e)
         {
-    
-            
+            try
+            {
+                abc();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Рукожёп детектед", MessageBoxButtons.OK);
+            }
+
         }
         private  void abc ()
         {
-          
-
+                Double.Parse("qwe");
         }
         
     }
