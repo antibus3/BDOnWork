@@ -34,7 +34,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(92, 48);
+            this.button1.Location = new System.Drawing.Point(864, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -44,10 +44,10 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(14, 112);
+            this.panel1.Location = new System.Drawing.Point(82, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1096, 344);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(673, 338);
+            this.panel1.TabIndex = 1;
             // 
             // Form1
             // 

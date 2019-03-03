@@ -23,9 +23,10 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ParseParfjonov p = new ParseParfjonov("E:/Protocol_N14520_ОБ-120_N5043.jpeg");
-        }
+            ParseParfjonov p = new ParseParfjonov("E:/Графики/Protocol_N14765_ОБ-120_N4976.jpeg");
+            p.Location = new Point(0, 0);
+            p.Parent = panel1;
 
-        
+        }
     }
 }

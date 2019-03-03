@@ -16,3 +16,5 @@ E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\bin\Debug\BOnWorkLib.pdb
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestInteractionWithBase.csprojResolveAssemblyReference.cache
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestBDOnWorkLib.dll
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestBDOnWorkLib.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestInteractionWithBase.csprojAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestBDOnWorkLib\obj\Debug\UnitTestInteractionWithBase.csproj.CoreCompileInputs.cache

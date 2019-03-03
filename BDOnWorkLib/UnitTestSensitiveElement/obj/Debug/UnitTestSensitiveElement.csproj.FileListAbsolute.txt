@@ -6,3 +6,5 @@ E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\bin\Debug\BOnWorkLib.pdb
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\obj\Debug\UnitTestSensitiveElement.csprojResolveAssemblyReference.cache
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\obj\Debug\UnitTestSensitiveElement.dll
 E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\obj\Debug\UnitTestSensitiveElement.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\obj\Debug\UnitTestSensitiveElement.csprojAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\UnitTestSensitiveElement\obj\Debug\UnitTestSensitiveElement.csproj.CoreCompileInputs.cache
