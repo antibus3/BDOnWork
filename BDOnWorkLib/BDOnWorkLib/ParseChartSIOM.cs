@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace BDOnWorkLib
 {
-    public class ParseChart : Panel
+    public class ParseChartSIOM : Panel
     {
         private Chart ChartSPI = new Chart();
         private Chart ChartLoss = new Chart();
@@ -31,11 +31,11 @@ namespace BDOnWorkLib
 
 
 
-        public ParseChart ()
+        public ParseChartSIOM ()
         {
         }
 
-        public ParseChart (string directionFile)
+        public ParseChartSIOM (string directionFile)
         {
             try
             {

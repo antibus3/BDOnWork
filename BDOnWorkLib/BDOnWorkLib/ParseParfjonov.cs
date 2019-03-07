@@ -24,8 +24,8 @@ namespace BDOnWorkLib
             try
             {
                 ThisSetting();
-                _primalDrawing = new Bitmap(patchOfFile);
                 CreateInfo();
+                _primalDrawing = new Bitmap(patchOfFile);
             }
             catch
             {
@@ -283,21 +283,5 @@ namespace BDOnWorkLib
             return "";
         }
 
-    }
-
-    //  Образцы цифр
-    public static class CodeNumber
-    {
-        public const string Point = "ffffb666 ff00003a ff90dbff ";
-        public const string n0 = "ffffffff ffffb666 ff000000 ff00003a ff90dbff ffffffff ";
-        public const string n1 = "ffffffff ffdb903a ff000000 ff000000 ff0066b6 ffffffff ";
-        public const string n2 = "ffdb903a ff000000 ff000000 ff000000 ff000066 ffb6ffff ";
-        public const string n3 = "ffdb903a ff000000 ff000000 ff003a90 ffdbffff ffffffff ";
-        public const string n4 = "ffffffff ffffffff ffffffff ffb66600 ff66b6ff ffffffff ";
-        public const string n5 = "ffffb666 ff000000 ff000000 ff0066b6 ffffffff ffffffff ";
-        public const string n6 = "ffffffff ffffb666 ff000000 ff000000 ff66b6ff ffffffff ";
-        public const string n7 = "ffffffff ffffffff ffb66666 ffb6ffff ffffffff ffffffff ";
-        public const string n8 = "ffffffff ffdb903a ff000000 ff000000 ff0066b6 ffffffff ";
-        public const string n9 = "ffffb666 ff000000 ff003a90 ffdbffff ffffffff ffffffff ";
     }
 }
