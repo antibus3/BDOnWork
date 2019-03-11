@@ -23,7 +23,7 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ParseKoffer q = new ParseKoffer("E:/181206nmnpn120k5054mCT8108162_sko02_koffer_ComputeTrend.png");
+            ParseChartVK q = new ParseChartVK("C:/Users/Александр/Desktop/прога/Новая папка/4619 4620.xlsx", 1);
             q.Parent = panel1;
 
         }

@@ -20,12 +20,12 @@ namespace BDOnWorkLib
 
         private Label MessageLabel = new Label();
         private readonly string DirectionFile;
+        private readonly int NumberVKinChart;  //  т.к. в одном файле могут быть 2 катушки (а могут и не быть), то нужно указать номер этой катушки в файле
 
-        
-
-        public ParseChartVK (string directionFile)
+        public ParseChartVK (string directionFile, int numberVKinChart)
         {
             DirectionFile = directionFile;
+            NumberVKinChart = numberVKinChart;
             this.Size = new Size(1100, 300);
             CreateMessage();
             VisibleChart();
@@ -44,10 +44,30 @@ namespace BDOnWorkLib
         }
 
         //  Метода парсинга файла
-        private void VisibleChart ()
+        private async void VisibleChart ()
         {
+            try
+            {
+                await Task.Run(() => { CreateChart(); });
+                //  Если небыло исключения, значит графики построились
+                MessageLabel.Visible = false;
+                ChartVK.Parent = this;
+                ChartVK.Left = 0;
+            }
+            catch
+            {
+                MessageBox.Show("Возникла ошибка на операции визуализации графика ВК. Обратитесь к рукожопу, который делал эту программу", "Рукожёп детектед", MessageBoxButtons.OK);
+                throw;
+            }
 
+        }
 
+        //  Метод создания диаграмм
+        private void CreateChart()
+        {
+            CreateDateChart(DirectionFile);
+            GC.Collect(); // при запросе точек диаграммы выделяется большой объём памяти. Его надо очистить, чтобы не мешался.
+            CreateAreaChart();
         }
 
         //  Метод нахождения данных диаграммы
@@ -58,78 +78,82 @@ namespace BDOnWorkLib
                 //  Запрос в файл с данными для получения точек, по каторым строится диаграмма
                 InteractionWithBase oCon = new InteractionWithBase(directionFile);
                 oCon.SettingConnectToBD();
+                string spiVK = String.Format("ER{0}(dB)", NumberVKinChart);
+                string powerVK = String.Format("POW{0}(mW)", NumberVKinChart);
+                Dictionary<string, object> fildsOfVK = new Dictionary<string, object>();
+                fildsOfVK.Add("Time (s)", null);
+                fildsOfVK.Add(spiVK, null);
+                fildsOfVK.Add(powerVK, null);
                 List<SensitiveElement> PointsOfChart = QueriesToBD.SelectFromBD(oCon, "Лист1", new SensitiveElement());
 
                 //  Настройка диаграмм
-                Series SChartSPI_SPI1 = new Series("СПИ");
-                SChartSPI_SPI1.ChartType = SeriesChartType.Line;
-                Series SChartTemperature = new Series("Температура");
-                SChartTemperature.ChartType = SeriesChartType.Line;
-                Series SChartPower1 = new Series("Мощьность");
-                SChartPower1.ChartType = SeriesChartType.Line;
+                Series SChartSPI_SPI = new Series("СПИ");
+                SChartSPI_SPI.ChartType = SeriesChartType.Line;
+                Series SChartPower = new Series("Мощьность");
+                SChartPower.ChartType = SeriesChartType.Line;
 
                 foreach (SensitiveElement s in PointsOfChart)
                 {
                     //  Составление точек диаграммы СПИ
                     //  Основные параметры для составления точек
                     double time = (double)s.Filds["Time (s)"];
-                    double spi1 = (double)s.Filds["ER1(dB)"];
-                    double power1 = (double)s.Filds["POW1(mW)"];
-                    double power2 = (double)s.Filds["POW2(mW)"];
-                    double temperature = (double)s.Filds["Темп#, °С"];
-                    double kd = (double)s.Filds["КД по лев# кан#, %"];
-                    double loss = (double)s.Filds["Потери, дБ"];
+                    double spi = (double)s.Filds[spiVK];
+                    double power = (double)s.Filds[powerVK];
 
                     //  Поиск минималных и максимальных точкд для отображения диаграмм
-                    if (dMaxSPI < spi1) dMaxSPI = spi1;
-                    if (dMaxSPI < spi2) dMaxSPI = spi1;
-                    if (dMinSPI > spi1) dMinSPI = spi1;
-                    if (dMinSPI > spi2) dMinSPI = spi2;
-                    if (dMaxPower < power1) dMaxPower = power1;
-                    if (dMaxPower < power2) dMaxPower = power2;
-                    if (dMinPower > power1) dMinPower = power1;
-                    if (dMinPower > power2) dMinPower = power2;
-                    if (dMaxKD < kd) dMaxKD = kd;
-                    if (dMinKD > kd) dMinKD = kd;
-                    if (dMaxLoss < loss) dMaxLoss = loss;
-                    if (dMinLoss > loss) dMinLoss = loss;
+                    if (dMaxSPI < spi) dMaxSPI = spi;
+                    if (dMinSPI > spi) dMinSPI = spi;
+                    if (dMaxPower < power) dMaxPower = power;
+                    if (dMinPower > power) dMinPower = power;
 
                     //  Диаграмма СПИ
-                    DataPoint DPspi1 = new DataPoint(time, spi1);
-                    DataPoint DPspi2 = new DataPoint(time, spi2);
-                    DataPoint DPtemperature = new DataPoint(time, temperature);
-                    //  Диаграмма Потери\КД
-                    DataPoint DPloss = new DataPoint(time, loss);
-                    DataPoint DPkd = new DataPoint(time, kd);
+                    DataPoint DPspi = new DataPoint(time, spi);
                     //  Диаграмма Мощности
-                    DataPoint DPpower1 = new DataPoint(time, power1);
-                    DataPoint DPpower2 = new DataPoint(time, power2);
+                    DataPoint DPpower = new DataPoint(time, power);
 
                     //  Добавление точек к шкале диаграммы
-                    SChartSPI_SPI1.Points.Add(DPspi1);
-                    SChartSPI_SPI2.Points.Add(DPspi2);
-                    SChartTemperature.Points.Add(DPtemperature);
-                    SChartPower1.Points.Add(DPpower1);
-                    SChartPower2.Points.Add(DPpower2);
-                    SChartKD.Points.Add(DPkd);
-                    SChartLoss.Points.Add(DPloss);
+                    SChartSPI_SPI.Points.Add(DPspi);
+                    SChartPower.Points.Add(DPpower);
                 }
 
 
                 //  Добавление графиков к диаграммам
-                ChartSPI.Series.Add(SChartSPI_SPI1);
-                ChartSPI.Series.Add(SChartSPI_SPI2);
-                ChartSPI.Series.Add(SChartTemperature);
-                ChartLoss.Series.Add(SChartLoss);
-                ChartLoss.Series.Add(SChartKD);
-                ChartPower.Series.Add(SChartPower1);
-                ChartPower.Series.Add(SChartPower2);
+                ChartVK.Series.Add(SChartSPI_SPI);
+                ChartVK.Series.Add(SChartPower);
             }
             catch
             {
-                MessageBox.Show("Возникла ошибка на операции составления графиков СИОМ. Обратитесь к рукожопу, который делал эту программу", "Рукожёп детектед", MessageBoxButtons.OK);
+                MessageBox.Show("Возникла ошибка на операции составления графиков ВК. Обратитесь к рукожопу, который делал эту программу", "Рукожёп детектед", MessageBoxButtons.OK);
                 throw;
             }
+        }
+
+        //  Метод настройки внешнего вида диаграмм
+        private void CreateAreaChart()
+        {
+            //  добавление заголовков
+            ChartVK.Titles.Add("Диаграмма ВК");
+
+            //  добавление областей диаграммы
+            ChartVK.ChartAreas.Add("СПИ/Мощьность");
+
+            // Добавление легенды
+            Legend LegendSPI = new Legend("СПИ/Мощьность");
+            LegendSPI.Docking = Docking.Top;
+            ChartVK.Legends.Add(LegendSPI);
+
+            //  Настройка шкалы
+            ChartVK.ChartAreas[0].AxisX.Title = "Время c.";
+            ChartVK.ChartAreas[0].AxisY.Title = "СПИ";
+            ChartVK.ChartAreas[0].AxisY2.Title = "Мощьность";
+            ChartVK.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            ChartVK.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            ChartVK.ChartAreas[0].AxisY2.MajorGrid.Enabled = false;
+            ChartVK.ChartAreas[0].AxisY2.Maximum = Math.Round(dMaxPower, 3) + 0.01;
+            ChartVK.ChartAreas[0].AxisY2.Minimum = Math.Round(dMinPower, 3) - 0.01;
+            ChartVK.ChartAreas[0].AxisY.Maximum = Math.Round(dMaxSPI, 0) + 10;
+            ChartVK.ChartAreas[0].AxisY.Minimum = Math.Round(dMinSPI, 0) - 10;
+            ChartVK.Series[1].YAxisType = AxisType.Secondary;
         }
 
     }
