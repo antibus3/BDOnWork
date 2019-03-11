@@ -7,88 +7,35 @@ namespace BDOnWorkLib
 {
     public class SensitiveElement
     {
-        //  Основные характеристики Элемента Чуствительного
-        public readonly int? Id;
-        public readonly string NumberVK;
-        public readonly string NumberSIOM;
-        public readonly double? SignalLeftSIOM;
-        public readonly double? SignalRigthSIOM;
-        public readonly double? SPILeftSIOM;
-        public readonly double? SPIRigthSIOM;
-        public readonly double? LengthLeftSIOM;
-        public readonly double? LengthRigthSIOM;
-        public readonly double? SignalVK;
-        public readonly double? SPIVK;
-        public readonly double? LengthLeftVK;
-        public readonly double? LengthRigthVK;
-        public readonly double? ConstantSignal;
 
-        //  Побочные характеристики
-        public readonly string NumberTemperatureSensor;
-        public readonly bool? IsExperement;
+        public readonly Dictionary<String, object> Filds;
 
-        public SensitiveElement() { }
-
-        public SensitiveElement(
-            int? id = null,
-            string numberVK = null,
-            string numberSIOM = null,
-            double? signalLeftSIOM = null,
-            double? signalRigthSIOM = null,
-            double? sPILeftSIOM = null,
-            double? sPIRigthSIOM = null,
-            double? lengthLeftSIOM = null,
-            double? lengthRigthSIOM = null,
-            double? signalVK = null,
-            double? sPIVK = null,
-            double? lengthLeftVK = null,
-            double? lengthRigthVK = null,
-            double? constantSignal = null,
-            string numberTemperatureSensor = null,
-            bool? isExperement = null
-                                )
+        public SensitiveElement()
         {
-            Id = id;
-            NumberVK = numberVK;
-            NumberSIOM = numberSIOM;
-            SignalLeftSIOM = signalLeftSIOM;
-            SignalRigthSIOM = signalRigthSIOM;
-            SPILeftSIOM = sPILeftSIOM;
-            SPIRigthSIOM = sPIRigthSIOM;
-            LengthLeftSIOM = lengthLeftSIOM;
-            LengthRigthSIOM = lengthRigthSIOM;
-            SignalVK = signalVK;
-            SPIVK = sPIVK;
-            LengthLeftVK = lengthLeftVK;
-            LengthRigthVK = lengthRigthVK;
-            ConstantSignal = constantSignal;
-            NumberTemperatureSensor = numberTemperatureSensor;
-            IsExperement = isExperement;
+            Filds = new Dictionary<string, object>();
+        }
+
+        public SensitiveElement(Dictionary<String, object> filds)
+        {
+            Filds = filds;
+        }
+
+        public List<string> GetListHead ()  //  Метод для возвращения спистка столбцов
+        {
+
+            return this.Filds.Keys.ToList();
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is SensitiveElement)) return false; //  Если обект не является блоком, тогда он не может быть эквивалентным 
-            SensitiveElement itemToCompare = obj as SensitiveElement;
-            if (
-                this.Id == itemToCompare.Id &&
-                this.NumberVK == itemToCompare.NumberVK &&
-                this.NumberSIOM == itemToCompare.NumberSIOM &&
-                this.SignalLeftSIOM == itemToCompare.SignalLeftSIOM &&
-                this.SignalRigthSIOM == itemToCompare.SignalRigthSIOM &&
-                this.SPILeftSIOM == itemToCompare.SPILeftSIOM &&
-                this.SPIRigthSIOM == itemToCompare.SPIRigthSIOM &&
-                this.LengthLeftSIOM == itemToCompare.LengthLeftSIOM &&
-                this.LengthRigthSIOM == itemToCompare.LengthRigthSIOM &&
-                this.SignalVK == itemToCompare.SignalVK &&
-                this.SPIVK == itemToCompare.SPIVK &&
-                this.LengthLeftVK == itemToCompare.LengthLeftVK &&
-                this.LengthRigthVK == itemToCompare.LengthRigthVK &&
-                this.ConstantSignal == itemToCompare.ConstantSignal &&
-                this.NumberTemperatureSensor == itemToCompare.NumberTemperatureSensor &&
-                this.IsExperement == itemToCompare.IsExperement
-              ) return true;
-                        else return false;
+            var ElementOfObj = obj as SensitiveElement;
+            if (ElementOfObj == null) return false;  //  Если обьект не элеемент, тогда они не эквивалентны
+            if (this.Filds.Keys.Count != ElementOfObj.Filds.Keys.Count) return false; //  Если количество ключей разное, то они не эквивалентны
+            foreach (string s in this.Filds.Keys)
+            {
+                if (this.Filds[s].ToString() != ElementOfObj.Filds[s].ToString()) return false;
+            }
+            return true;
         }
 
 

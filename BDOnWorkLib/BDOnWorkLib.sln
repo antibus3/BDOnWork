@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOnWorkLib", "BDOnWorkLib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{E205EACF-F718-4D6D-BE35-6B7E495C8DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSensitiveElement", "UnitTestSensitiveElement\UnitTestSensitiveElement.csproj", "{E68509B8-E162-4EC5-9F4E-094017DADD42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E205EACF-F718-4D6D-BE35-6B7E495C8DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E205EACF-F718-4D6D-BE35-6B7E495C8DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E205EACF-F718-4D6D-BE35-6B7E495C8DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68509B8-E162-4EC5-9F4E-094017DADD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68509B8-E162-4EC5-9F4E-094017DADD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68509B8-E162-4EC5-9F4E-094017DADD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68509B8-E162-4EC5-9F4E-094017DADD42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

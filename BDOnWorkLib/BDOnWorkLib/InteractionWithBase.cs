@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Configuration;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
@@ -14,10 +13,14 @@ namespace BDOnWorkLib
     {
 
         public OleDbConnection oConn {get; private set; }     //  объект БД
+        private string DirectionFile;
         
         private bool IsOpened = false;
 
-        public InteractionWithBase() { }
+        public InteractionWithBase(string directionFile)
+        {
+            DirectionFile = directionFile;
+        }
 
         public bool SettingConnectToBD() //  Метод, который настраивает связь с БД и проверяет, есть ли соединение
         {
@@ -25,7 +28,7 @@ namespace BDOnWorkLib
             {
                 oConn = new OleDbConnection();
                 //  Проверка, есть ли вообще файл БД
-                FileInfo BD = new FileInfo(ConfigurationManager.AppSettings["DirBD"]);
+                FileInfo BD = new FileInfo(DirectionFile);
                 if (!BD.Exists) return false;
                 //  Строка соединеия с БД. Место расположения берётся из конфига (DirBD)
                 oConn.ConnectionString =

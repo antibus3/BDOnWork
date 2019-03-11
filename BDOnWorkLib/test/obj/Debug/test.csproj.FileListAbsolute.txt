@@ -1,6 +1,5 @@
 E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.exe
 E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.pdb
-E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csprojResolveAssemblyReference.cache
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.Form1.resources
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.Properties.Resources.resources
 E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csproj.GenerateResource.Cache
@@ -9,3 +8,6 @@ E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.pdb
 E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\test.exe.config
 E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\BOnWorkLib.dll
 E:\GitHub\BDOnWork\BDOnWorkLib\test\bin\Debug\BOnWorkLib.pdb
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csprojAssemblyReference.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+E:\GitHub\BDOnWork\BDOnWorkLib\test\obj\Debug\test.csproj.CopyComplete
